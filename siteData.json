@@ -1,0 +1,261 @@
+{
+  "enableSearch": true,
+  "pages": [
+    {
+      "src": "AboutUs.md",
+      "title": "About Us",
+      "headings": {
+        "about-us": "About Us",
+        "project-team": "Project team",
+        "nidhish-krishnan": "Nidhish Krishnan",
+        "ng-chun-man": "Ng Chun Man",
+        "ching-ming-yuan": "Ching Ming Yuan",
+        "loo-mei-lin-zann": "Loo Mei Lin Zann",
+        "nereus-ng-wei-bin": "Nereus Ng Wei Bin"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "Configuration.md",
+      "title": "Configuration guide",
+      "headings": {
+        "configuration-guide": "Configuration guide"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "DevOps.md",
+      "title": "DevOps guide",
+      "headings": {
+        "devops-guide": "DevOps guide",
+        "build-automation": "Build automation",
+        "continuous-integration-ci": "Continuous integration (CI)",
+        "code-coverage": "Code coverage",
+        "repository-wide-checks": "Repository-wide checks",
+        "making-a-release": "Making a release"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "DeveloperGuide.md",
+      "title": "Developer Guide",
+      "headings": {
+        "profbook-developer-guide": "ProfBook Developer Guide",
+        "acknowledgements": "Acknowledgements",
+        "setting-up-getting-started": "Setting up, getting started",
+        "design": "Design",
+        "architecture": "Architecture",
+        "ui-component": "UI component",
+        "logic-component": "Logic component",
+        "model-component": "Model component",
+        "storage-component": "Storage component",
+        "common-classes": "Common classes",
+        "implementation": "Implementation",
+        "proposed-undo-redo-feature": "[Proposed] Undo/redo feature",
+        "proposed-data-archiving": "[Proposed] Data archiving",
+        "documentation-logging-testing-configuration-dev-ops": "Documentation, logging, testing, configuration, dev-ops",
+        "appendix-requirements": "Appendix: Requirements",
+        "product-scope": "Product scope",
+        "user-stories": "User stories",
+        "use-cases": "Use cases",
+        "non-functional-requirements": "Non-Functional Requirements",
+        "glossary": "Glossary",
+        "appendix-instructions-for-manual-testing": "Appendix: Instructions for manual testing",
+        "launch-and-shutdown": "Launch and shutdown",
+        "deleting-a-person": "Deleting a person",
+        "saving-data": "Saving data"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "Documentation.md",
+      "title": "Documentation guide",
+      "headings": {
+        "documentation-guide": "Documentation Guide"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "Logging.md",
+      "title": "Logging guide",
+      "headings": {
+        "logging-guide": "Logging guide"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "SettingUp.md",
+      "title": "Setting up and getting started",
+      "headings": {
+        "setting-up-and-getting-started": "Setting up and getting started",
+        "setting-up-the-project-in-your-computer": "Setting up the project in your computer",
+        "before-writing-code": "Before writing code"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "Testing.md",
+      "title": "Testing guide",
+      "headings": {
+        "testing-guide": "Testing guide",
+        "running-tests": "Running tests",
+        "types-of-tests": "Types of tests"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "UserGuide.md",
+      "title": "User Guide",
+      "headings": {
+        "profbook-user-guide": "ProfBook User Guide",
+        "features-overview": "Features overview",
+        "consolidated-information": "Consolidated Information",
+        "quick-start": "Quick start",
+        "features": "Features",
+        "general-commands": "General Commands",
+        "viewing-help-help-todo-update": "Viewing help : help (//TODO Update)",
+        "listing-all-persons-ls": "Listing all persons : ls",
+        "clearing-all-entries-clear": "Clearing all entries : clear",
+        "exiting-the-program-exit": "Exiting the program : exit",
+        "student-group-commands": "Student/Group commands",
+        "adding-a-student-touch": "Adding a student: touch",
+        "deleting-a-student-group-rm": "Deleting a Student/ Group: rm",
+        "move-students-into-out-of-the-group-mv": "Move students into/out of the group: mv",
+        "create-group-mkdir": "Create Group : mkdir",
+        "tasks-command": "Tasks command",
+        "create-todo-task-todo": "Create Todo Task : todo",
+        "create-deadline-task-deadline": "Create Deadline task : deadline",
+        "mark-unmark-tasks-as-completed-mark": "Mark/Unmark tasks as completed: mark",
+        "search-for-tasks-find": "Search for Tasks: find",
+        "save-the-data-todo-update": "Save the data (//TODO update)",
+        "edit-the-data-file-todo-update": "Edit the data file (//TODO update)",
+        "archive-data-files-coming-in-v1-3": "Archive data files [coming in v1.3]",
+        "locate-persons-by-name-coming-in-v1-3": "Locate persons by name: [coming in v1.3]",
+        "delete-a-person-coming-in-v1-3": "Delete a person : [coming in v1.3]",
+        "faq": "FAQ",
+        "known-issues": "Known issues",
+        "command-summary": "Command summary"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "index.md",
+      "title": "ProfBook",
+      "headings": {
+        "profbook": "ProfBook",
+        "introducing-our-product-profbook": "Introducing our product - ProfBook",
+        "acknowledgements": "Acknowledgements"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/mingyuanc.md",
+      "title": "Ching Ming Yuan's Project Portfolio Page",
+      "headings": {
+        "project-profbook": "Project: ProfBook",
+        "features-contribution": "Features Contribution",
+        "classes-contribution": "Classes Contribution",
+        "code-contributed": "Code contributed:",
+        "project-management": "Project Management:",
+        "documentations": "Documentations:"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/nereuswb922.md",
+      "title": "Nereus Ng Wei Bin's Project Portfolio Page",
+      "headings": {
+        "profbook": "ProfBook",
+        "reposense-report": "RepoSense Report",
+        "code-contributions": "Code Contributions",
+        "class-enhancements": "Class Enhancements",
+        "new-features": "New Features",
+        "gui-enhancements": "GUI Enhancements",
+        "user-guide-contributions": "User Guide Contributions",
+        "developer-guide-contributions": "Developer Guide Contributions",
+        "team-based-task-contributions": "Team-Based Task Contributions",
+        "review-and-mentoring-contributions": "Review and Mentoring Contributions"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/ngchunman.md",
+      "title": "Ng Chun Man's Project Portfolio Page",
+      "headings": {
+        "project-profbook": "Project: ProfBook",
+        "code-contributed": "Code contributed:",
+        "classes-contribution": "Classes contribution:"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/nid21cs.md",
+      "title": "Nidhish Krishnan's Project Portfolio Page",
+      "headings": {
+        "project-profbook": "Project: ProfBook"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/zannloo.md",
+      "title": "Loo Mei Lin Zann's Project Portfolio Page",
+      "headings": {
+        "project-profbook": "Project: ProfBook"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/AddRemark.md",
+      "title": "Tutorial: Adding a command",
+      "headings": {
+        "tutorial-adding-a-command": "Tutorial: Adding a command",
+        "create-a-new-remark-command": "Create a new remark command",
+        "hook-remarkcommand-into-the-application": "Hook RemarkCommand into the application",
+        "run-the-application": "Run the application",
+        "change-remarkcommand-to-throw-an-exception": "Change RemarkCommand to throw an exception",
+        "enhancing-remarkcommand": "Enhancing RemarkCommand",
+        "make-the-command-accept-parameters": "Make the command accept parameters",
+        "parse-user-input": "Parse user input",
+        "add-remark-to-the-model": "Add Remark to the model",
+        "add-a-new-remark-class": "Add a new Remark class",
+        "make-use-of-remark": "Make use of Remark",
+        "add-a-placeholder-element-for-remark-to-the-ui": "Add a placeholder element for remark to the UI",
+        "modify-person-to-support-a-remark-field": "Modify Person to support a Remark field",
+        "modify-person": "Modify Person",
+        "update-other-usages-of-person": "Update other usages of Person",
+        "updating-storage": "Updating Storage",
+        "finalizing-the-ui": "Finalizing the UI",
+        "putting-everything-together": "Putting everything together",
+        "update-remarkcommand-and-remarkcommandparser": "Update RemarkCommand and RemarkCommandParser",
+        "writing-tests": "Writing tests",
+        "automatically-generating-tests": "Automatically generating tests",
+        "conclusion": "Conclusion"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/RemovingFields.md",
+      "title": "Tutorial: Removing Fields",
+      "headings": {
+        "tutorial-removing-fields": "Tutorial: Removing Fields",
+        "safely-deleting-address": "Safely deleting Address",
+        "assisted-refactoring": "Assisted refactoring",
+        "manual-refactoring": "Manual refactoring",
+        "tidying-up": "Tidying up"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/TracingCode.md",
+      "title": "Tutorial: Tracing code",
+      "headings": {
+        "tutorial-tracing-code": "Tutorial: Tracing code",
+        "before-we-start": "Before we start",
+        "setting-a-breakpoint": "Setting a breakpoint",
+        "tracing-the-execution-path": "Tracing the execution path",
+        "conclusion": "Conclusion"
+      },
+      "headingKeywords": {}
+    }
+  ]
+}
