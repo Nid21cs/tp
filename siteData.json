@@ -114,7 +114,7 @@
         "features": "Features",
         "general-commands": "General Commands",
         "viewing-help-help-todo-update": "Viewing help : help (//TODO Update)",
-        "listing-all-persons-ls": "Listing all persons : ls",
+        "listing-all-users-ls": "Listing all users : ls",
         "clearing-all-entries-clear": "Clearing all entries : clear",
         "exiting-the-program-exit": "Exiting the program : exit",
         "student-group-commands": "Student/Group commands",
