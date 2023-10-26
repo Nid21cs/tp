@@ -1,0 +1,67 @@
+@startuml
+!include style.puml
+skinparam ArrowFontStyle plain
+
+box CreateDeadlineCommand LOGIC_COLOR_T1
+participant ":CreateDeadlineCommand " as command LOGIC_COLOR
+participant "target: TaskOperation" as target LOGIC_COLOR
+participant "groupOper: ChildOperation<Student>" as groupOper LOGIC_COLOR
+participant "rootOper: ChildOperation<Group>" as rootOper LOGIC_COLOR
+end box
+
+[-> command : execute(state)
+activate command
+
+alt adds to one Student/Group
+    create target
+    command -> target : state.taskOperation(path)
+    activate target
+
+    target --> command
+    deactivate target
+
+    command -> target : addTask(this.deadline)
+    activate target
+
+    target --> command
+    deactivate target
+    destroy target
+
+    [<--command : CommandResult
+
+else adds to all Students
+    create groupOper
+    command -> groupOper : state.groupChildOperation(path)
+    activate groupOper
+
+    groupOper --> command
+    deactivate groupOper
+
+    command -> groupOper : addTaskToAllChildren(deadline, 1)
+    activate groupOper
+
+    groupOper --> command
+    deactivate groupOper
+    destroy groupOper
+
+    [<--command : CommandResult
+
+else adds to all Groups
+    create rootOper
+    command -> rootOper : state.rootChildOperation(path)
+    activate rootOper
+
+    rootOper --> command
+    deactivate rootOper
+
+    command -> rootOper : addTaskToAllChildren(deadline, 1)
+    activate rootOper
+
+    rootOper --> command
+    deactivate rootOper
+    destroy rootOper
+
+    [<--command : CommandResult
+    end
+deactivate command
+@enduml

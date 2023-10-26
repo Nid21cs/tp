@@ -1,0 +1,112 @@
+@startuml
+!include style.puml
+skinparam ArrowFontStyle plain
+
+box EditCommand LOGIC_COLOR_T1
+participant ":EditCommand " as command LOGIC_COLOR
+participant "rootOper: ChildOperation<Group>" as rootOper LOGIC_COLOR
+participant "groupId: GroupId" as groupId LOGIC_COLOR
+participant "groupToEdit: Group" as groupToEdit LOGIC_COLOR
+participant "editedGroup: Group" as editedGroup LOGIC_COLOR
+participant "groupOper: ChildOperation<Student>" as groupOper LOGIC_COLOR
+participant "studentId: StudentId" as studentId LOGIC_COLOR
+participant "studentToEdit: Student" as studentToEdit LOGIC_COLOR
+participant "editedStudent: Student" as editedStudent LOGIC_COLOR
+end box
+
+[-> command : execute(state)
+activate command
+
+alt isGroupDirectory
+    create rootOper
+    command -> rootOper : state.rootChildOperation()
+    activate rootOper
+
+    rootOper --> command
+    deactivate rootOper
+
+    create groupId
+    command -> groupId : target.getGroupId().get()
+    activate groupId
+
+    groupId --> command
+    deactivate groupId
+
+    create groupToEdit
+    command -> groupToEdit : rootOperation.getChild(groupId)
+    activate groupToEdit
+
+    groupToEdit --> command
+    deactivate groupToEdit
+
+    create editedGroup
+    command -> editedGroup : createEditedGroup(groupToEdit, this.editGroupDescriptor);
+    activate editedGroup
+
+    editedGroup --> command
+    deactivate editedGroup
+
+    command -> rootOper : deleteChild(groupId)
+    activate rootOper
+
+    rootOper --> command
+    deactivate rootOper
+
+    command -> rootOper : addChild(groupId, editedGroup);
+    activate rootOper
+
+    rootOper --> command
+    deactivate rootOper
+
+    destroy rootOper
+
+    [<--command : CommandResult
+
+else isStudentDirectory
+   create groupOper
+    command -> groupOper : state.groupChildOperation(target)
+    activate groupOper
+
+    groupOper --> command
+    deactivate groupOper
+
+    create studentId
+    command -> studentId : target.getStudentId().get()
+    activate studentId
+
+    studentId --> command
+    deactivate studentId
+
+    create studentToEdit
+    command -> studentToEdit : groupOperation.getChild(studentId)
+    activate studentToEdit
+
+    studentToEdit --> command
+    deactivate studentToEdit
+
+    create editedStudent
+    command -> editedStudent : createEditedStudent(studentToEdit, this.editStudentDescriptor);
+    activate editedStudent
+
+    editedStudent --> command
+    deactivate editedStudent
+
+    command -> groupOper : deleteChild(studentId)
+    activate groupOper
+
+    groupOper --> command
+    deactivate groupOper
+
+    command -> groupOper : addChild(editedStudent.getId(), editedStudent);
+    activate groupOper
+
+    groupOper --> command
+    deactivate groupOper
+
+    destroy groupOper
+
+    [<--command : CommandResult
+
+end
+deactivate command
+@enduml

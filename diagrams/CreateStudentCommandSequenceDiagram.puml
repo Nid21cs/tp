@@ -1,0 +1,28 @@
+@startuml
+!include style.puml
+skinparam ArrowFontStyle plain
+
+box CreateStudentCommand LOGIC_COLOR_T1
+participant ":CreateStudentCommand" as command LOGIC_COLOR
+participant "target: ChildOperation<Student>" as target LOGIC_COLOR
+end box
+
+[-> command : execute(state)
+activate command
+
+create target
+command -> target : state.groupChildOperation(path)
+activate target
+
+target --> command
+deactivate target
+
+command -> target : addChild(this.student.getId(), this.student)
+activate target
+
+target --> command
+deactivate target
+
+[<--command : CommandResult
+deactivate command
+@enduml
