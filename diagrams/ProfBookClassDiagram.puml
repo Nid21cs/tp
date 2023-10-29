@@ -1,0 +1,51 @@
+@startuml
+!include style.puml
+skinparam arrowThickness 1.1
+skinparam arrowColor MODEL_COLOR
+skinparam classBackgroundColor MODEL_COLOR
+
+Package ProfBook as ProfBookPackage <<Rectangle>>{
+Class "ChildrenManager" as ChildrenManager
+Class "TaskListManager" as TaskListManager
+Class "<<interface>>\nIChildElement" as IChildElement
+Class "{abstract}\nChildrenAndTaskListManager" as ChildrenAndTaskListManager
+Class Root
+Class Group
+Class Student
+Class Id
+Class Name
+Class Address
+Class Email
+Class Phone
+
+Class I #FFFFFF
+}
+
+Class HiddenOutside #FFFFFF
+
+HiddenOutside .down.> ChildrenManager
+
+ChildrenAndTaskListManager .up.|> IChildElement
+Student -up-|> TaskListManager
+Student .up.|> IChildElement
+
+Group *--> Id
+Student *--> Id
+
+Group *--> Name
+Student *--> Name
+
+Student *--> Email
+Student *--> Address
+Student *--> Phone
+
+ChildrenAndTaskListManager -left-> TaskListManager
+ChildrenAndTaskListManager -right-> ChildrenManager
+
+TaskListManager -up-> TaskList
+
+Root -up-|> ChildrenManager
+Group -up-|> ChildrenAndTaskListManager
+Root -left-> "*" Group : Parent of >
+Group -left-> "*" Student : Parent of >
+@enduml

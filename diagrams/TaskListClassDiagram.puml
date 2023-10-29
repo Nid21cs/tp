@@ -1,0 +1,32 @@
+@startuml
+!include style.puml
+skinparam arrowThickness 1.1
+skinparam arrowColor MODEL_COLOR
+skinparam classBackgroundColor MODEL_COLOR
+together {
+package "Model" #F4F6F6 {
+package "profbook" #F4F6F6 {
+Class TaskListManager
+}
+
+
+package "taskmanager" #F4F6F6 {
+
+Class TaskList
+
+Class "{abstract}\nTask" as Task
+
+Class Deadline
+
+Class ToDo
+}
+}
+Class HiddenOutside #FFFFFF
+HiddenOutside .up.> TaskListManager
+
+TaskListManager -right-> TaskList
+TaskList --> Task
+Task <|-- Deadline
+Task <|-- ToDo
+
+@enduml
