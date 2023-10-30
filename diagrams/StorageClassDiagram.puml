@@ -11,6 +11,7 @@ Class "<<interface>>\nUserPrefsStorage" as UserPrefsStorage
 Class JsonUserPrefsStorage
 }
 
+Class "<<interface>>\nStorage" as Storage
 Class ProfBookStorageManager
 
 package "ProfBook Storage" #F4F6F6{
@@ -28,10 +29,14 @@ Class JsonAdaptedToDo
 }
 
 Class HiddenOutside #FFFFFF
-HiddenOutside ..> ProfBookStorageManager
+HiddenOutside ..> Storage
 
-ProfBookStorageManager -down-|> UserPrefsStorage
-ProfBookStorageManager -right-|> ProfBookStorage
+ProfBookStorageManager .up.|> Storage
+ProfBookStorageManager -up-> "1" UserPrefsStorage
+ProfBookStorageManager -up-> "1" ProfBookStorage
+
+Storage -left-|> UserPrefsStorage
+Storage -right-|> ProfBookStorage
 
 JsonUserPrefsStorage .up.|> UserPrefsStorage
 JsonProfBookStorage .up.|> ProfBookStorage
