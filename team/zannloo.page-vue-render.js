@@ -53,6 +53,6 @@ with(this){return _c('h3',{attrs:{"id":"community"}},[_v("Community:"),_c('a',{s
 with(this){return _c('ul',[_c('li',[_v("PRs reviewed (with non-trivial review comments): to be added soon.\n"),_c('ul',[_c('li',[_c('strong',[_c('a',{attrs:{"href":"https://github.com/AY2324S1-CS2103T-W15-2/tp/pull/135"}},[_v("Pull Request #135")])])]),_v(" "),_c('li',[_c('strong',[_c('a',{attrs:{"href":"https://github.com/AY2324S1-CS2103T-W15-2/tp/pull/136"}},[_v("Pull Request #136")])])]),_v(" "),_c('li',[_c('strong',[_c('a',{attrs:{"href":"https://github.com/AY2324S1-CS2103T-W15-2/tp/pull/180"}},[_v("Pull Request #180")])])])])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(", generated on Wed, 8 Nov 2023, 22:49:35 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(", generated on Wed, 8 Nov 2023, 22:50:52 GMT+8]")])])])}
 }];
   
