@@ -3,30 +3,26 @@
 skinparam arrowThickness 1.1
 skinparam arrowColor MODEL_COLOR
 skinparam classBackgroundColor MODEL_COLOR
-together {
-package "Model" #F4F6F6 {
-package "profbook" #F4F6F6 {
+
+
+
+
+package "Task" as TaskPackage #F4F6F6 {
+Class "<<interface>>\nReadOnlyTaskList" as ReadOnlyTaskList
+Class "<<interface>>\nITaskListManager" as ITaskListManager
 Class TaskListManager
-}
-
-
-package "taskmanager" #F4F6F6 {
-
-Class TaskList
-
 Class "{abstract}\nTask" as Task
-
 Class Deadline
-
 Class ToDo
-}
-}
-Class HiddenOutside #FFFFFF
-HiddenOutside .up.> TaskListManager
+ITaskListManager .up.|> ReadOnlyTaskList
+TaskListManager .up.|> ITaskListManager
+TaskListManager -down-> "*" Task
 
-TaskListManager -right-> TaskList
-TaskList --> Task
 Task <|-- Deadline
 Task <|-- ToDo
+
+}
+
+
 
 @enduml

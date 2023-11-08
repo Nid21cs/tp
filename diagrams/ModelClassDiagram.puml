@@ -16,6 +16,10 @@ Package ProfBook {
 
 }
 
+Package Task {
+
+}
+
 Class I #FFFFFF
 }
 
@@ -24,6 +28,7 @@ Class HiddenOutside #FFFFFF
 HiddenOutside ..> Model
 
 ModelManager --> Path
+ProfBook -right-> Task
 ModelManager --> ProfBook
 ModelManager --> ObservableList
 ObservableList ..> ProfBook

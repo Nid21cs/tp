@@ -2,111 +2,59 @@
 !include style.puml
 skinparam ArrowFontStyle plain
 
-box EditCommand LOGIC_COLOR_T1
-participant ":EditCommand " as command LOGIC_COLOR
-participant "rootOper: ChildOperation<Group>" as rootOper LOGIC_COLOR
-participant "groupId: GroupId" as groupId LOGIC_COLOR
-participant "groupToEdit: Group" as groupToEdit LOGIC_COLOR
-participant "editedGroup: Group" as editedGroup LOGIC_COLOR
-participant "groupOper: ChildOperation<Student>" as groupOper LOGIC_COLOR
-participant "studentId: StudentId" as studentId LOGIC_COLOR
-participant "studentToEdit: Student" as studentToEdit LOGIC_COLOR
-participant "editedStudent: Student" as editedStudent LOGIC_COLOR
+box Command LOGIC_COLOR_T1
+participant ":EditCommand" as EditCommand LOGIC_COLOR
 end box
 
-[-> command : execute(state)
-activate command
+box Model MODEL_COLOR_T1
+participant ":ModelManager" as ModelManagerStatic MODEL_COLOR
+participant "opr:RootChildOperation" as RootChildOperation MODEL_COLOR
+participant "oldGroup:Group" as oldGroup MODEL_COLOR
+participant "editedGroup:Group" as newGroup MODEL_COLOR
+end box
 
-alt isGroupDirectory
-    create rootOper
-    command -> rootOper : state.rootChildOperation()
-    activate rootOper
+[->  EditCommand : execute()
+activate EditCommand
 
-    rootOper --> command
-    deactivate rootOper
+EditCommand -> ModelManagerStatic : taskOperation(path)
+activate ModelManagerStatic
 
-    create groupId
-    command -> groupId : target.getGroupId().get()
-    activate groupId
+create RootChildOperation
+ModelManagerStatic -> RootChildOperation
+activate RootChildOperation
 
-    groupId --> command
-    deactivate groupId
+RootChildOperation --> ModelManagerStatic : opr
+deactivate RootChildOperation
 
-    create groupToEdit
-    command -> groupToEdit : rootOperation.getChild(groupId)
-    activate groupToEdit
+ModelManagerStatic --> EditCommand :opr
+deactivate ModelManagerStatic
 
-    groupToEdit --> command
-    deactivate groupToEdit
+EditCommand -> RootChildOperation : editChild(groupId, editedField)
+activate RootChildOperation
 
-    create editedGroup
-    command -> editedGroup : createEditedGroup(groupToEdit, this.editGroupDescriptor);
-    activate editedGroup
+RootChildOperation -> oldGroup : getName()
+activate oldGroup
 
-    editedGroup --> command
-    deactivate editedGroup
+oldGroup --> RootChildOperation : name
+deactivate oldGroup
 
-    command -> rootOper : deleteChild(groupId)
-    activate rootOper
+RootChildOperation -> oldGroup : getId()
+activate oldGroup
 
-    rootOper --> command
-    deactivate rootOper
+oldGroup --> RootChildOperation : id
+destroy oldGroup
 
-    command -> rootOper : addChild(groupId, editedGroup);
-    activate rootOper
+create newGroup
+RootChildOperation -> newGroup
+activate newGroup
 
-    rootOper --> command
-    deactivate rootOper
+newGroup --> RootChildOperation :editedGroup
+deactivate newGroup
 
-    destroy rootOper
+RootChildOperation --> EditCommand
 
-    [<--command : CommandResult
+destroy RootChildOperation
 
-else isStudentDirectory
-   create groupOper
-    command -> groupOper : state.groupChildOperation(target)
-    activate groupOper
-
-    groupOper --> command
-    deactivate groupOper
-
-    create studentId
-    command -> studentId : target.getStudentId().get()
-    activate studentId
-
-    studentId --> command
-    deactivate studentId
-
-    create studentToEdit
-    command -> studentToEdit : groupOperation.getChild(studentId)
-    activate studentToEdit
-
-    studentToEdit --> command
-    deactivate studentToEdit
-
-    create editedStudent
-    command -> editedStudent : createEditedStudent(studentToEdit, this.editStudentDescriptor);
-    activate editedStudent
-
-    editedStudent --> command
-    deactivate editedStudent
-
-    command -> groupOper : deleteChild(studentId)
-    activate groupOper
-
-    groupOper --> command
-    deactivate groupOper
-
-    command -> groupOper : addChild(editedStudent.getId(), editedStudent);
-    activate groupOper
-
-    groupOper --> command
-    deactivate groupOper
-
-    destroy groupOper
-
-    [<--command : CommandResult
-
-end
-deactivate command
+[<--EditCommand
+destroy EditCommand
 @enduml

@@ -6,8 +6,8 @@ skinparam classBackgroundColor MODEL_COLOR
 
 Package ProfBook as ProfBookPackage <<Rectangle>>{
 Class "ChildrenManager" as ChildrenManager
-Class "TaskListManager" as TaskListManager
 Class "<<interface>>\nIChildElement" as IChildElement
+Class "<<interface>>\nIChildManager" as IChildManager
 Class "{abstract}\nChildrenAndTaskListManager" as ChildrenAndTaskListManager
 Class Root
 Class Group
@@ -17,13 +17,33 @@ Class Name
 Class Address
 Class Email
 Class Phone
-
-Class I #FFFFFF
 }
+
+package "Task" as TaskPackage #F4F6F6 {
+Class "<<interface>>\nReadOnlyTaskList" as ReadOnlyTaskList
+Class "<<interface>>\nITaskListManager" as ITaskListManager
+Class TaskListManager
+Class "{abstract}\nTask" as Task
+Class Deadline
+Class ToDo
+
+ITaskListManager -up-|> ReadOnlyTaskList
+TaskListManager .up.|> ITaskListManager
+TaskListManager -down-> "*" Task
+
+Task <|-- Deadline
+Task <|-- ToDo
+
+}
+
+
 
 Class HiddenOutside #FFFFFF
 
-HiddenOutside .down.> ChildrenManager
+HiddenOutside .down.> Root
+
+ChildrenManager .up.|> IChildManager
+ChildrenAndTaskListManager .up.|> IChildManager
 
 ChildrenAndTaskListManager .up.|> IChildElement
 Student -up-|> TaskListManager
@@ -39,10 +59,9 @@ Student *--> Email
 Student *--> Address
 Student *--> Phone
 
-ChildrenAndTaskListManager -left-> TaskListManager
-ChildrenAndTaskListManager -right-> ChildrenManager
-
-TaskListManager -up-> TaskList
+ChildrenAndTaskListManager .up.|> ITaskListManager
+ChildrenAndTaskListManager -right-> TaskListManager
+ChildrenAndTaskListManager -left-> ChildrenManager
 
 Root -up-|> ChildrenManager
 Group -up-|> ChildrenAndTaskListManager

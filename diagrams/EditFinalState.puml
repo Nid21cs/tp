@@ -1,0 +1,36 @@
+@startuml
+title Initial state
+
+object Root
+
+object group2 {
+    name = "group 2"
+    id = grp-001
+}
+
+object group3 {
+    name = "group 1"
+    id = grp-003
+}
+
+object student1 {
+    name = "John"
+    id = 1234Y
+    email = "IloveDrawingDiagrams@gmail.com"
+    phone = "09881765"
+    address = "NUS"
+}
+
+object student2 {
+    name = "Mary"
+    id = 9876A
+    email = "IloveCoding@gmail.com"
+    phone = "12345678"
+    address = "Malaysia"
+}
+
+Root -down-> group3
+Root -down-> group2
+group3 -down-> student1
+group2 -down-> student2
+@enduml

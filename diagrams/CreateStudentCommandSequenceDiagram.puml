@@ -4,25 +4,42 @@ skinparam ArrowFontStyle plain
 
 box CreateStudentCommand LOGIC_COLOR_T1
 participant ":CreateStudentCommand" as command LOGIC_COLOR
-participant "target: ChildOperation<Student>" as target LOGIC_COLOR
 end box
 
-[-> command : execute(state)
+box Model MODEL_COLOR_T1
+participant ":ModelManager" as ModelManagerStatic MODEL_COLOR
+participant "opr:ChildOperation<Student>" as ChildOperation MODEL_COLOR
+participant "g:Group" as Group MODEL_COLOR
+end box
+
+[-> command : execute()
 activate command
 
-create target
-command -> target : state.groupChildOperation(path)
-activate target
+command -> ModelManagerStatic : groupChildOperation(path)
+activate ModelManagerStatic
 
-target --> command
-deactivate target
+create ChildOperation
+ModelManagerStatic -> ChildOperation
+activate ChildOperation
 
-command -> target : addChild(this.student.getId(), this.student)
-activate target
+ChildOperation --> ModelManagerStatic : opr
+deactivate ChildOperation
 
-target --> command
-deactivate target
+ModelManagerStatic --> command : opr
+deactivate ModelManagerStatic
 
-[<--command : CommandResult
+command -> ChildOperation : addChild(id, student)
+activate ChildOperation
+
+ChildOperation -> Group : addChild(id, student)
+activate Group
+
+Group --> ChildOperation
+deactivate Group
+
+ChildOperation --> command
+destroy ChildOperation
+
+[<--command
 deactivate command
 @enduml

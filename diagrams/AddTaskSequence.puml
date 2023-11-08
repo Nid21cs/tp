@@ -15,7 +15,7 @@ end box
 [->  CreateTodoCommand : execute()
 activate CreateTodoCommand
 
-CreateTodoCommand -> ModelManagerStatic : taskOperation(new Path("~/grp-001"))
+CreateTodoCommand -> ModelManagerStatic : taskOperation(path)
 activate ModelManagerStatic
 
 create TaskOperation
