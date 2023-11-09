@@ -196,8 +196,6 @@
       "title": "Nereus Ng Wei Bin's Project Portfolio Page",
       "headings": {
         "profbook": "ProfBook",
-        "reposense-report": "RepoSense Report",
-        "code-contributions": "Code Contributions",
         "class-enhancements": "Class Enhancements",
         "new-features": "New Features",
         "gui-enhancements": "GUI Enhancements",
@@ -213,8 +211,13 @@
       "title": "Ng Chun Man's Project Portfolio Page",
       "headings": {
         "project-profbook": "Project: ProfBook",
-        "code-contributed": "Code contributed:",
-        "classes-contribution": "Classes contribution:"
+        "code-contributions": "Code Contributions:",
+        "class-enhancements": "Class Enhancements:",
+        "enhancements-to-existing-features": "Enhancements to existing features:",
+        "user-guide-contributions": "User Guide Contributions",
+        "developer-guide-contributions": "Developer Guide Contributions",
+        "team-based-task-contributions": "Team-Based Task Contributions",
+        "review-and-mentoring-contributions": "Review and Mentoring Contributions"
       },
       "headingKeywords": {}
     },
