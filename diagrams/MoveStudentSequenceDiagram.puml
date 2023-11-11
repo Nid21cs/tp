@@ -1,0 +1,72 @@
+@startuml
+!include style.puml
+skinparam ArrowFontStyle plain
+
+box Logic LOGIC_COLOR_T1
+participant ":MoveStudentToGroupCommand" as command LOGIC_COLOR
+end box
+
+box Model MODEL_COLOR_T1
+participant ":ModelManager" as ModelManagerStatic MODEL_COLOR
+participant "sourceOpr:ChildOperation<Student>" as ChildOperation MODEL_COLOR
+participant "destOpr:ChildOperation<Student>" as ChildOperation2 MODEL_COLOR
+participant "sourceGroup:Group" as SourceGroup MODEL_COLOR
+participant "destGroup:Group" as DestGroup MODEL_COLOR
+end box
+
+[-> command : execute()
+activate command
+
+command -> ModelManagerStatic : groupChildOperation(sourcePath)
+activate ModelManagerStatic
+
+create ChildOperation
+ModelManagerStatic -> ChildOperation
+activate ChildOperation
+
+ChildOperation --> ModelManagerStatic : sourceOpr
+deactivate ChildOperation
+
+ModelManagerStatic --> command : sourceOpr
+deactivate ModelManagerStatic
+
+command -> ModelManagerStatic : groupChildOperation(destPath)
+activate ModelManagerStatic
+
+create ChildOperation2
+ModelManagerStatic -> ChildOperation2
+activate ChildOperation2
+
+ChildOperation2 --> ModelManagerStatic : destOpr
+deactivate ChildOperation2
+
+ModelManagerStatic --> command : destOpr
+deactivate ModelManagerStatic
+
+command -> ChildOperation : deleteChild(id)
+activate ChildOperation
+
+ChildOperation -> SourceGroup : deleteChild(id)
+activate SourceGroup
+
+SourceGroup --> ChildOperation
+deactivate SourceGroup
+
+ChildOperation --> command
+destroy ChildOperation
+
+command -> ChildOperation2 : addChild(id, student)
+activate ChildOperation2
+
+ChildOperation2 -> DestGroup : addChild(id, student)
+activate DestGroup
+
+DestGroup --> ChildOperation2
+deactivate DestGroup
+
+ChildOperation2 --> command
+destroy ChildOperation2
+
+[<--command
+deactivate command
+@enduml

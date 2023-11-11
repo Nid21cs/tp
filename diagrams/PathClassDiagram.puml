@@ -1,0 +1,30 @@
+@startuml
+!include style.puml
+skinparam arrowThickness 1.1
+skinparam arrowColor MODEL_COLOR
+skinparam classBackgroundColor MODEL_COLOR
+
+package Path as PathPackage {
+
+Class "{abstract}\nPath" as Path
+
+Class AbsolutePath
+
+Class RelativePath
+
+package "Path Element" #F4F6F6{
+Class PathElement
+enum "<<enumeration>>\nPathElementType" as PathElementType
+}
+
+Path *-left-> "*" PathElement
+
+AbsolutePath -up-|> Path
+RelativePath -up-|> Path
+
+PathElement *-down-> "1" PathElementType
+
+
+}
+
+@enduml

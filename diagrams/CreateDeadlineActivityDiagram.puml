@@ -1,0 +1,20 @@
+@startuml
+skin rose
+skinparam ActivityFontSize 15
+skinparam ArrowFontSize 12
+start
+:Execute add deadline to all students command;
+
+'Since the beta syntax does not support placing the condition outside the
+'diamond we place it as the true branch instead.
+
+if () then ([else])
+([target path is root/group directory]) elseif () then ([all students already have the deadline])
+else ([else])
+    :Add deadline to students without the deadline;
+    stop
+endif
+
+:Throw Exception;
+stop
+@enduml

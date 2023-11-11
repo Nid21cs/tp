@@ -1,0 +1,20 @@
+@startuml
+skin rose
+skinparam ActivityFontSize 15
+skinparam ArrowFontSize 12
+start
+:Execute create student command;
+
+'Since the beta syntax does not support placing the condition outside the
+'diamond we place it as the true branch instead.
+
+if () then ([else])
+([target path is student directory]) elseif () then ([else])
+([group exists in profbook]) elseif () then ([else])
+else ([student id not used])
+    :Add student to group;
+    stop
+endif
+:Throw Exception;
+stop
+@enduml

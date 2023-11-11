@@ -1,0 +1,31 @@
+@startuml
+skin rose
+skinparam ActivityFontSize 15
+skinparam ArrowFontSize 12
+start
+:Execute edit group command;
+
+'Since the beta syntax does not support placing the condition outside the
+'diamond we place it as the true branch instead.
+
+if () then ([target group exists])
+else ([else])
+    :Throw Exception;
+    stop
+endif
+
+:Create edited group;
+
+if () then ([edited group equals old group])
+    :Throw Exception;
+    stop
+([else]) elseif () then ([else])
+([id field is edited]) elseif () then ([else])
+else ([new id already used])
+    :Throw Exception;
+    stop
+endif
+:Remove old group;
+:Add new Group;
+stop
+@enduml
