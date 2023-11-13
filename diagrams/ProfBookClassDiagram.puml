@@ -5,10 +5,10 @@ skinparam arrowColor MODEL_COLOR
 skinparam classBackgroundColor MODEL_COLOR
 
 Package ProfBook as ProfBookPackage <<Rectangle>>{
-Class "ChildrenManager" as ChildrenManager
+Class "ChildManager" as ChildrenManager
 Class "<<interface>>\nIChildElement" as IChildElement
 Class "<<interface>>\nIChildManager" as IChildManager
-Class "{abstract}\nChildrenAndTaskListManager" as ChildrenAndTaskListManager
+Class "{abstract}\nChildAndTaskListManager" as ChildrenAndTaskListManager
 Class Root
 Class Group
 Class Student

@@ -1,0 +1,116 @@
+{
+  "groups" : [ {
+    "name" : "Group One",
+    "id" : "GRP-001",
+    "students" : [ {
+      "name" : "Jackie",
+      "phone" : "65341488",
+      "email" : "jackie@gmail.com",
+      "address" : "1 Park Road 03-K78 People's Park Complex",
+      "id" : "0002Y",
+      "tasks" : [ ]
+    }, {
+      "name" : "Raman",
+      "phone" : "64755838",
+      "email" : "raman@gmail.com",
+      "address" : "3Rd Floor, 80 Raffles Place, Uob Plaza 2",
+      "id" : "0003Y",
+      "tasks" : [ ]
+    }, {
+      "name" : "Yarn Meng",
+      "phone" : "65467742",
+      "email" : "yarnmeng@gmail.com",
+      "address" : "480 Lorong 6 Toa Payoh Atrium 4th Storey HDB Hub",
+      "id" : "0004Y",
+      "tasks" : [ ]
+    }, {
+      "name" : "Kiat Win",
+      "phone" : "62102572",
+      "email" : "kiatwin@gmail.com",
+      "address" : "4 Loyang Walk Loyang Industrial Estate",
+      "id" : "0005Y",
+      "tasks" : [ ]
+    } ],
+    "tasks" : [ ]
+  }, {
+    "name" : "Best Group in CS2103T",
+    "id" : "GRP-002",
+    "students" : [ {
+      "name" : "Ming Yuan",
+      "phone" : "64380137",
+      "email" : "mingyuan@gmail.com",
+      "address" : "Woodlands, Malaysia",
+      "id" : "0006Y",
+      "tasks" : [ ]
+    }, {
+      "name" : "Zann",
+      "phone" : "62924352",
+      "email" : "zann@gmail.com",
+      "address" : "Somewhere in bedok",
+      "id" : "0007Y",
+      "tasks" : [ ]
+    }, {
+      "name" : "Nereus",
+      "phone" : "63365480",
+      "email" : "nereus@gmail.com",
+      "address" : "Muar, Johor, Malaysia",
+      "id" : "0008Y",
+      "tasks" : [ ]
+    }, {
+      "name" : "Gary",
+      "phone" : "67792128",
+      "email" : "gary@gmail.com",
+      "address" : "Somewhere in Malaysia",
+      "id" : "0009Y",
+      "tasks" : [ ]
+    }, {
+      "name" : "Nidhish",
+      "phone" : "63480398",
+      "email" : "nidhish@gmail.com",
+      "address" : "Somewhere in Sinagpore",
+      "id" : "0010Y",
+      "tasks" : [ ]
+    } ],
+    "tasks" : [ {
+      "type" : "ToDo",
+      "description" : "Task 0",
+      "isDone" : "false"
+    }, {
+      "type" : "ToDo",
+      "description" : "Task 1",
+      "isDone" : "false"
+    }, {
+      "type" : "ToDo",
+      "description" : "Task 2",
+      "isDone" : "false"
+    }, {
+      "type" : "ToDo",
+      "description" : "Task 3",
+      "isDone" : "false"
+    }, {
+      "type" : "ToDo",
+      "description" : "Task 4",
+      "isDone" : "false"
+    }, {
+      "type" : "ToDo",
+      "description" : "Task 5",
+      "isDone" : "false"
+    }, {
+      "type" : "ToDo",
+      "description" : "Task 6",
+      "isDone" : "false"
+    }, {
+      "type" : "ToDo",
+      "description" : "Task 7",
+      "isDone" : "false"
+    }, {
+      "type" : "ToDo",
+      "description" : "Task 8",
+      "isDone" : "false"
+    }, {
+      "type" : "ToDo",
+      "description" : "Task 9",
+      "isDone" : "false"
+    } ]
+  } ]
+}
